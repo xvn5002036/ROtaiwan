@@ -99,8 +99,12 @@ MyRagnarok 2024.exe  是2021-11-17_RagexeRE.exe轉換過來的
 
 
 
+以下要用20220406版本需要編譯
 
-更改以下數字的地方改成20220406再重新編譯
+在src\custom\defines_pre.hpp下貼上 #define PACKETVER 20220406
+
+以下所示 在進行編譯
+
 ```
 #ifndef PACKETVER
 	/// Do NOT edit this line! To set your client version, please do this instead:
