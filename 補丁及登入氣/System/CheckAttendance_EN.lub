@@ -1,0 +1,45 @@
+-- Original translation works of zackdreaver: https://github.com/zackdreaver/ROenglishRE
+-- Continuated by llchrisll at https://github.com/llchrisll/ROenglishRE
+-- This file can be distributed, used and modified freely
+-- This file shouldn't be claimed as part of your project, unless you fork it from https://github.com/llchrisll/ROenglishRE
+-- Last updated: 20230321
+
+Config = {	
+	StartDate = 20230105,
+	EndDate = 20230131
+}
+Reward = {
+	{ 1, 100933, 2 },
+	{ 2, 25464, 10 },
+	{ 3, 23582, 1 },
+	{ 4, 14533, 1 },
+	{ 5, 23307, 10 },
+	{ 6, 23012, 10 },
+	{ 7, 23043, 1 },
+	{ 8, 6413, 2 },
+	{ 9, 9587, 1 },
+	{ 10, 23047, 5 },
+	{ 11, 23048, 5 },
+	{ 12, 14533, 2 },
+	{ 13, 23041, 1 },
+	{ 14, 100934, 1 },
+	{ 15, 6316, 2 },
+	{ 16, 12264, 5 },
+	{ 17, 23899, 5 },
+	{ 18, 23898, 5 },
+	{ 19, 100333, 5 },
+	{ 20, 25464, 10 }
+}
+function main()
+	result, msg = InsertCheckAttendanceConfig(Config.EvendOnOff, Config.StartDate, Config.EndDate)
+	if not result then
+		return false, msg
+	end
+	for k, rewardtbl in pairs(Reward) do
+		result, msg = InsertCheckAttendanceReward(rewardtbl[1], rewardtbl[2], rewardtbl[3])
+		if not result then
+			return false, msg
+		end
+	end
+	return true, "success"
+end

@@ -95,11 +95,10 @@ NEMO/2023_inputs.db
 @不會用NEMO去形成Diff捨直接執行(已製作完成)
 
 
-MyRagnarok 2023.exe  是2021-11-17_RagexeRE.exe轉換過來的
+MyRagnarok 2024.exe  是2021-11-17_RagexeRE.exe轉換過來的
 
-MyRagnarok 2023-2.exe  是2022-04-06_Ragexe_1648707856.exe轉換過來的
 
-注意當你使用MyRagnarok 2023-2.exe時，建議到服務端的src\config\packets.hpp 用記事本打開
+
 
 更改以下數字的地方改成20220406再重新編譯
 ```
