@@ -1,45 +1,124 @@
--- Original translation works of zackdreaver: https://github.com/zackdreaver/ROenglishRE
--- Continuated by llchrisll at https://github.com/llchrisll/ROenglishRE
--- This file can be distributed, used and modified freely
--- This file shouldn't be claimed as part of your project, unless you fork it from https://github.com/llchrisll/ROenglishRE
--- Last updated: 20230321
-
-Config = {	
-	StartDate = 20230105,
-	EndDate = 20230131
+-- This software was shared by ROLab. 2024/3/30 ¤U¤È 12:10:50
+-- Using GRF Editor Decompiler (beta 1.0.3)
+Config = {
+	StartDate = 20240305,
+	EndDate = 20240401
 }
 Reward = {
-	{ 1, 100933, 2 },
-	{ 2, 25464, 10 },
-	{ 3, 23582, 1 },
-	{ 4, 14533, 1 },
-	{ 5, 23307, 10 },
-	{ 6, 23012, 10 },
-	{ 7, 23043, 1 },
-	{ 8, 6413, 2 },
-	{ 9, 9587, 1 },
-	{ 10, 23047, 5 },
-	{ 11, 23048, 5 },
-	{ 12, 14533, 2 },
-	{ 13, 23041, 1 },
-	{ 14, 100934, 1 },
-	{ 15, 6316, 2 },
-	{ 16, 12264, 5 },
-	{ 17, 23899, 5 },
-	{ 18, 23898, 5 },
-	{ 19, 100333, 5 },
-	{ 20, 25464, 10 }
+	{
+		1,
+		25464,
+		1
+	},
+	{
+		2,
+		14900,
+		10
+	},
+	{
+		3,
+		14887,
+		2
+	},
+	{
+		4,
+		23204,
+		3
+	},
+	{
+		5,
+		23043,
+		1
+	},
+	{
+		6,
+		25464,
+		2
+	},
+	{
+		7,
+		12264,
+		1
+	},
+	{
+		8,
+		12208,
+		1
+	},
+	{
+		9,
+		14592,
+		1
+	},
+	{
+		10,
+		12633,
+		1
+	},
+	{
+		11,
+		25464,
+		3
+	},
+	{
+		12,
+		22979,
+		1
+	},
+	{
+		13,
+		12411,
+		2
+	},
+	{
+		14,
+		12412,
+		2
+	},
+	{
+		15,
+		12883,
+		2
+	},
+	{
+		16,
+		25464,
+		4
+	},
+	{
+		17,
+		6316,
+		3
+	},
+	{
+		18,
+		14533,
+		2
+	},
+	{
+		19,
+		14996,
+		2
+	},
+	{
+		20,
+		12633,
+		3
+	}
 }
-function main()
+
+-- Function #0
+main = function()
 	result, msg = InsertCheckAttendanceConfig(Config.EvendOnOff, Config.StartDate, Config.EndDate)
-	if not result then
+	if not result == true then
 		return false, msg
 	end
 	for k, rewardtbl in pairs(Reward) do
 		result, msg = InsertCheckAttendanceReward(rewardtbl[1], rewardtbl[2], rewardtbl[3])
-		if not result then
+		if not result == true then
 			return false, msg
 		end
 	end
 	return true, "success"
+	k = Config.EndDate
 end

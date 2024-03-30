@@ -1,31 +1,27 @@
--- Original translation works of zackdreaver: https://github.com/zackdreaver/ROenglishRE
--- Continuated by llchrisll at https://github.com/llchrisll/ROenglishRE
--- This file can be distributed, used and modified freely
--- This file shouldn't be claimed as part of your project, unless you fork it from https://github.com/llchrisll/ROenglishRE
--- Last updated: 20230321
-
+-- This software was shared by ROLab. 2024/3/30 下午 12:10:55
+-- Using GRF Editor Decompiler (beta 1.0.3)
 RecommendedQuestInfoList = {}
 RecommendedQuestInfoList = {
 	[1] = {
-		Title = "Welcome to Ragnarok Online!",
+		Title = "你好!歡迎來到RO仙境傳說的世界!",
 		IconName = "ico_gq.bmp",
-		Summary = "We provide help for Novice adventurer.",
+		Summary = "我們為新手玩家們加油喔!甘巴爹~",
 		NpcSpr = "4_F_01",
 		NpcNavi = "iz_ac01",
 		NpcPosX = 102,
 		NpcPosY = 44,
 		BgName = "reco_01.bmp",
 		QuestInfo1 = {
-			"Welcome!",
-			"The Criatura academy offers a variety of information for Novice. If you haven't visited The Criatura academy, please visit us to get useful informations and items."
+			"歡迎歡迎!",
+			"克里圖拉學院為了協助新手冒險家，提供各種有益的資訊。如果有尚未造訪克里圖拉學院的新手冒險家們，記得過來領取有益的資訊和禮包喔!"
 		},
 		QuestInfo2 = {
-			"$$Novice$$ welcome!!",
-			"Beginner%%Support%%Bread!!Bread!!",
-			"&*Free*& consult OK!!"
+			"$$初學者$$歡迎!!",
+			"新手%%禮包%%棒棒@!!讚讚@!!",
+			"&*轉職*&諮詢 OK!!"
 		},
 		QuestInfo3 = {
-			"^ff0000This page is intended for update, not quest. Please note that completing quests will not remove them.^000000"
+			"^ff0000※本頁面不是任務，而是更新介紹，即使完成任務也不會刪除。^000000"
 		}
 	}
 }

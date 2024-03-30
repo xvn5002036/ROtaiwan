@@ -1,328 +1,184 @@
--- Original translation works of zackdreaver: https://github.com/zackdreaver/ROenglishRE
--- Continuated by llchrisll at https://github.com/llchrisll/ROenglishRE
--- This file can be distributed, used and modified freely
--- This file shouldn't be claimed as part of your project, unless you fork it from https://github.com/llchrisll/ROenglishRE
--- Last updated: 20230321
-
+-- This software was shared by ROLab. 2024/3/30 下午 12:10:55
+-- Using GRF Editor Decompiler (beta 1.0.3)
 RecommendedQuestInfoList = {}
 RecommendedQuestInfoList = {
 	[1] = {
-		Title = "Welcome to Ragnarok Online!",
+		Title = "你好!歡迎來到RO仙境傳說的世界!",
 		IconName = "ico_gq.bmp",
-		Summary = "We provide help for Novice adventurer.",
+		Summary = "我們為新手玩家們加油喔!甘巴爹~",
 		NpcSpr = "4_F_01",
 		NpcNavi = "iz_ac01",
 		NpcPosX = 102,
 		NpcPosY = 44,
 		BgName = "reco_01.bmp",
 		QuestInfo1 = {
-			"Welcome!",
-			"The Criatura academy offers a variety of information for Novice. If you haven't visited The Criatura academy, please visit us to get useful informations and items."
+			"歡迎歡迎!",
+			"克里圖拉學院為了協助新手冒險家，提供各種有益的資訊。如果有尚未造訪克里圖拉學院的新手冒險家們，記得過來領取有益的資訊和禮包喔!"
 		},
 		QuestInfo2 = {
-			"$$Novice$$ welcome!!",
-			"Beginner%%Support%%Bread!!Bread!!",
-			"&*Free*& consult OK!!"
+			"$$初學者$$歡迎!!",
+			"新手%%禮包%%棒棒@!!讚讚@!!",
+			"&*轉職*&諮詢 OK!!"
 		},
 		QuestInfo3 = {
-			"^ff0000This page is an introduction for the update, not the quest. Please note that it will not be deleted even after completing the quest.^000000"
+			"^ff0000※本頁面不是任務，而是更新介紹，即使完成任務也不會刪除。^000000"
+		}
+	},
+	[84] = {
+		Title = "4轉職業開放!!!",
+		IconName = "ico_jq.bmp",
+		Summary = "揭開全新篇章!",
+		BgName = "reco_84.bmp",
+		QuestInfo1 = {
+			"4轉職業秘密終於公開!!!",
+			"新職業登場，懷抱各種使命與目的的冒險家展開挑戰，米德加爾特大陸也熱鬧不已。\n\t\t\t為了變得更強大的試煉與努力!\n\t\t\t還有你的故事。"
+		},
+		QuestInfo2 = {
+			"對象: ^55bbee轉生3轉職業^000000",
+			"BaseLv: ^ffaa66200^000000",
+			"JobLv:  ^ffaa6670^000000"
+		},
+		QuestInfo3 = {
+			"^ff0000※該頁面為更新介紹而非任務說明，即使完成任務也不會刪除。^000000"
 		}
 	},
 	[81] = {
-		Title = "Constellation Tower",
+		Title = "星座之塔",
 		IconName = "ico_sc.bmp",
-		Summary = "Face the new owner",
+		Summary = "與新主人見面",
 		NpcSpr = "4_ED_OSCAR",
 		NpcNavi = "e_tower",
 		NpcPosX = 71,
 		NpcPosY = 115,
 		BgName = "reco_81.bmp",
 		QuestInfo1 = {
-			"^003355The owner has changed?^000000",
-			"It seems that someone has overturned a tower, which was called the Endless Tower.",
-			"In a situation where it is impossible to know what kind of danger it is, someone has to identify the new owner."
+			"^003355換了新主人?^000000",
+			"有人似乎把無限塔弄得天翻地覆了，",
+			"在不清楚對方是何等的危險情況下，必須有人去了解新主人的真實身份。"
 		},
 		QuestInfo2 = {
-			"Requirements:",
-			"^990000Base Level 240 or higher^000000"
+			"攻略條件",
+			"^990000LV240以上^000000的冒險家"
 		},
 		QuestInfo3 = {
-			"^ff0000This page is an introduction for the update, not the quest. Please note that it will not be deleted even after completing the quest.^000000"
+			"^ff0000※該頁面為更新介紹而非任務說明，即使完成任務也不會刪除。^000000"
 		}
 	},
-	[82] = {
-		Title = "Traces of Heroes MD Tomb of Regret",
-		IconName = "ico_sc.bmp",
-		Summary = "A demon swordsman who was met in the Tomb of Regret and a demon sword that yearned for blood.",
-		BgName = "reco_82.bmp",
-		NpcSpr = "MD_TIARA",
-		NpcNavi = "dali",
-		NpcPosX = 124,
-		NpcPosY = 88,
-		QuestInfo1 = {
-			"We received a request from the princess of the ruins, that the contractor of the magic sword whom he met at the place has been found.",
-			"The sword roared and the dead body shed tears."
-		},
-		QuestInfo2 = {
-			"Requirements:",
-			"^990000Base Level 220 or higher^000000"
-		},
-		QuestInfo3 = {
-			"^ff0000This page is an introduction for the update, not the quest. Please note that it will not be deleted even after completing the quest.^000000"
-		}
-	},
-	[83] = {
-		Title = "Unfair Crash Site",
-		IconName = "ico_sc.bmp",
-		Summary = "A story in a place where unfairness fell.",
-		NpcSpr = "4_M_FAIRYANG",
-		BgName = "reco_83.bmp",
-		QuestInfo1 = {
-			"A lapine has discovered something at <NAVI>[Dimensional Rift]<INFO>dali02,137,86,0,101,0</INFO></NAVI>.",
-			"Adventurers were able to go to the place where unfairness fell. Let's explore the now forgotten cavity we found there."
-		},
-		QuestInfo2 = {
-			"Requirements:",
-			"^990000Base Level 215 or higher^000000"
-		},
-		QuestInfo3 = {
-			"^ff0000This page is an introduction for the update, not the quest. Please note that it will not be deleted even after completing the quest.^000000"
-		}
-	},
-	[84] = {
-		Title = "Geffen Night Arena",
-		IconName = "ico_sc.bmp",
-		Summary = "Hidden Match",
-		NpcSpr = "4_M_YURI",
-		NpcNavi = "geffen_in",
-		NpcPosX = 81,
-		NpcPosY = 60,
-		BgName = "reco_84.bmp",
-		QuestInfo1 = {
-			"^003355Hidden Match^000000",
-			"When the lights in the Geffen Magic Tournament are turned off and the night comes, the real powers hiding their power awaken.",
-			"Let's start a true raw fight that is not covered by showmanship and broadcast scripts."
-		},
-		QuestInfo2 = {
-			"Requirements:",
-			"^990000Base Level 210 or higher^000000"
-		},
-		QuestInfo3 = {
-			"^ff0000This page is an introduction for the update, not the quest. Please note that it will not be deleted even after completing the quest.^000000"
-		}
-	},
-	[85] = {
-		Title = "Illusion of Underwater",
-		IconName = "ico_sc.bmp",
-		Summary = "Reveal the secret of the endlessly deep undersea cave!",
-		BgName = "reco_85.bmp", 
-		QuestInfo1 = {
-			"An incident occurred when Shirud, who was fishing in Izlude, disappeared.",
-			"Three months later, an object he had was discovered.",
-			"Go to <NAVI>Izlude<INFO>izlude,132,49,0,101,0</INFO></NAVI> and help finding the missing person!"
-		},
-		QuestInfo2 = {
-			"Unknown Sea",
-			"Deep Sea Cave"
-		},
-		QuestInfo3 = {
-			"^ff0000This page is an introduction for the update, not the quest. Please note that it will not be deleted even after completing the quest.^000000"
-		}
-	},
-	[86] = {
-		Title = "Episode 17.2 Sage's Legacy",
+	[80] = {
+		Title = "EP18-祈禱的方向",
 		IconName = "ico_ep.bmp",
-		Summary = "Don't fall behind the starters ...",
-		NpcSpr = "4_M_ROOKIE",
-		NpcNavi = "sp_cor",
-		NpcPosX = 255,
-		NpcPosY = 285,
-		BgName = "reco_86.bmp", 
+		Summary = "在拉赫發生了何事?",
+		NpcSpr = "4_EP17_TABLET",
+		NpcNavi = "ba_in01",
+		NpcPosX = 26,
+		NpcPosY = 266,
+		BgName = "reco_80.bmp",
 		QuestInfo1 = {
-			"One side of Kor in the special border area. The sewer pipe, supposedly the only passage, was finally opened.",
-			"Rebelion's crew decided to enter the sewer line to track Ilulion."
+			"停滯不前的飛空艇信號分析終於結束了!",
+			"虛幻派的殘部似乎要在阿盧納貝茲教國首都拉赫規劃陰謀，",
+			"愛麗和冒險家決定親自去一趟拉赫。"
 		},
 		QuestInfo2 = {
-			"Requirements",
-			"Episode ^99000017.1^000000 completed",
-			"^990000Base Level 130 or higher^000000"
+			"前置條件",
+			"完成EP^99000017.2^000000",
+			"^990000LV170以上^000000的冒險家"
 		},
 		QuestInfo3 = {
-			"^ff0000This page is an introduction for the update, not the quest. Please note that it will not be deleted even after completing the quest.^000000"
+			"^ff0000※該頁面為更新介紹而非任務說明，即使完成任務也不會刪除。^000000"
 		}
 	},
-	[87] = {
-		Title = "Glastheim Challenge Mode",
+	[78] = {
+		Title = "沉沒之塔",
 		IconName = "ico_sc.bmp",
-		Summary = "Check for dimensional errors",
-		NpcSpr = "4_ED_OSCAR",
-		NpcNavi = "glast_01",
-		NpcPosX = 143,
-		NpcPosY = 288,
-		BgName = "reco_87.bmp", 
+		Summary = "侵蝕地的不速之客",
+		NpcSpr = "4_4JOB_LETICIA",
+		NpcNavi = "alberta",
+		NpcPosX = 213,
+		NpcPosY = 71,
+		BgName = "reco_78.bmp",
 		QuestInfo1 = {
-			"Attempt to close ^003355Dimensions which shouldn't exist^000000,",
-			"which are presumed to have occured at collapse of Glastheim!",
-			"It is judged that a huge causality will occur when the dimensional guardian's interfere. We need human help."
+			"^003355有人該做的事^000000",
+			"聽說沉沒的魔物終結塔侵蝕地下方湧入討人厭的魔物!",
+			"雖然無法獲得大量財富，但可以取得不錯的經驗值...不對，是可以成為很棒的經驗。感覺會在那裡出點力的你也不例外唷?"
 		},
 		QuestInfo2 = {
-			"Requirements",
-			"^990000Base Level 170 or higher^000000"
+			"攻掠條件",
+			"^990000LV40以上^000000的冒險家"
 		},
 		QuestInfo3 = {
-			"^ff0000This page is an introduction for the update, not the quest. Please note that it will not be deleted even after completing the quest.^000000"
+			"^ff0000※該頁面為更新介紹而非任務說明，即使完成任務也不會刪除。^000000"
 		}
 	},
-	[88] = {
-		Title = "Max Level raised for Expanded Classes!",
+	[11] = {
+		Title = "王室狩獵比賽",
+		IconName = "ico_ev.bmp",
+		Summary = "快來參加王室狩獵比賽!",
+		BgName = "reco_11.bmp",
+		QuestInfo1 = {
+			"王室狩獵比賽在<NAVI>[普隆德拉北邊野外]<INFO>prt_fild01,98,171,0,101,0</INFO></NAVI>舉行。",
+			"這是能夠展現冒險家們實力的大好機會，",
+			"還準備了優渥的獎勵，快來報名參賽吧!"
+		},
+		QuestInfo2 = {
+			"為了王室的名譽!"
+		},
+		QuestInfo3 = {
+			"^ff0000※該頁面為更新介紹而非任務說明，即使完成任務也不會刪除。^000000"
+		}
+	},
+	[77] = {
+		Title = "霸肋門德生物圈",
 		IconName = "ico_sc.bmp",
-		Summary = "Break! the! Limit!",
-		BgName = "reco_88.bmp", 
+		Summary = "向冒險家請求協助",
+		NpcSpr = "4_EP17_BASIC_B",
+		BgName = "reco_77.bmp",
 		QuestInfo1 = {
-			"Hello ~~",
-			"Good to meet you! ^950a0aI'm a cute and cute magical girl who came from a magical country to bring back the time of the stopped expansion level! ^000000",
-			"Now from now on, it is time for you to level up!"
+			"霸肋門德主人在<NAVI>[豪宅]<INFO>ba_in01,252,353,0,101,0</INFO></NAVI>內所打造的人工棲息地，你不會感到好奇嗎?",
+			"迫切地需要冒險家協助處理長久以來與世隔絕，奇妙地變強的怪物。"
 		},
 		QuestInfo2 = {
-			"^eb1842Pretty ~~ Level Up^000000",
-			"Base Lv: ^950a0a185^000000",
-			"Job Lv: ^950a0a65^000000"
+			"對象:",
+			"LV230以上的所有冒險家"
 		},
 		QuestInfo3 = {
-			"^3f3199Rebellion/Kagerou/Oborou/Star Emperor/Soul Reaper/Super Novice/Doram friends are affected ~^000000"
+			"^ff0000※該頁面為更新介紹而非任務說明，即使完成任務也不會刪除。^000000"
 		}
 	},
-	[89] = {
-		Title = "EDDA Biological Research Institute Dungeon - The Expedition",
-		Summary = "The long unknown expedition",
-		BgName = "reco_89.bmp",
-		IconName = "ico_sc.bmp",
-		NpcSpr = "4_F_SCIENCE",
-		NpcNavi = "yuno",
-		NpcPosX = 216,
-		NpcPosY = 345, 
+	[74] = {
+		Title = "幻想叢書",
+		IconName = "ico_vr.bmp",
+		Summary = "在普隆德拉東邊圖書館見面吧",
+		BgName = "reco_74.bmp",
 		QuestInfo1 = {
-			"^003355Visit those at the Lighthazen's Biomedical Research Institute, which have become obsessed and even fainted.^000000",
-			"You have to use ^990000Virtual Records^000000 to become a fellow of the 6 ^990000Rune-Midgarts Unofficial Expedtion Teams^000000 and uncover what they've been through."
+			"一本嶄新的互動式小說問世，讓你在虛擬空間中與書中角色一起展開故事！",
+			"趕快來^3169ce普隆德拉東邊圖書館！^000000",
+			"立刻前往<NAVI>[普隆德拉東邊圖書館]<INFO>prt_elib,18,46,0,101,0</INFO></NAVI>看看吧！"
 		},
 		QuestInfo2 = {
-			"Requirements",
-			"^990000Base Level 170 or higher^000000"
+			"震撼彈！",
+			"而且",
+			"^3275f0大逆轉！！！！^000000"
 		},
 		QuestInfo3 = {
-			"^ff0000This page is an introduction for the update, not the quest. Please note that it will not be deleted even after completing the quest.^000000"
+			"^ff0000※注意:本頁面為更新介紹，而非任務，完成任務後不會刪除。^000000"
 		}
 	},
-	[90] = {
-		Title = "EDDA - The Fall of Glastheim",
-		IconName = "ico_sc.bmp",
-		Summary = "Witness the truth of history",
-		NpcSpr = "4_ED_OSCAR",
-		NpcNavi = "glast_01",
-		NpcPosX = 243,
-		NpcPosY = 290,
-		BgName = "reco_90.bmp", 
+	[12] = {
+		Title = "艾爾帕蘭雪花節!",
+		IconName = "ico_ev.bmp",
+		Summary = "快來雪花故鄉艾爾帕蘭吧!",
+		BgName = "reco_12.bmp",
 		QuestInfo1 = {
-			"^003355The story behind the old Glastheim Memorial.^000000",
-			"The appearance of Schmitts, known as a fugitive/tyrant in history.",
-			"^990000Time and Space Oscar, which watches and records multiple dimensions of time, witnesses the last moments of Glastheim^000000 and decides to tell the truth to someone ..."
+			"對白雪的渴望所創造出來的奇蹟!",
+			"如果覺得沒有雪的冬天就不叫冬天的話，\n要不要來雪花的故鄉艾爾帕蘭，伴隨溫暖的心情與閃亮亮的雪花\n一起度過寒冷的冬天呢?",
+			"馬上前往<NAVI>[艾爾帕蘭]<INFO>aldebaran,174,164,0,101,0</INFO></NAVI>參加慶典吧!"
 		},
 		QuestInfo2 = {
-			"Requirements",
-			"^990000Base Level 130 or higher^000000"
+			"與閃閃發光的雪花一同",
+			"迎接寒冷的冬天!"
 		},
 		QuestInfo3 = {
-			"^ff0000This page is an introduction for the update, not the quest. Please note that it will not be deleted even after completing the quest.^000000"
-		}
-	},
-	[96] = {
-		Title = "Episode 17.1 is here! Illusion",
-		IconName = "ico_ep.bmp",
-		Summary = "The full-scale combined operation begins.",
-		NpcSpr = "4_M_PHILOFONTES",
-		NpcNavi = "pub_cat",
-		NpcPosX = 93,
-		NpcPosY = 105,
-		BgName = "reco_96.bmp",
-		QuestInfo1 = {
-			"The Episode's stage moves to Schwarzwald!",
-			"A full-fledged combined operation begins with Rebellions and the Secret Wings.",
-			"Rebellions, which has also established an operational base in Einbroch, is planning to attack a secret research facility discovered with information from the Secret Wings..."
-		},
-		QuestInfo2 = {
-			"Prerequisites", 
-			"Episode 16.2 complete",
-			"Required Level: 110 or higher"
-		},
-		QuestInfo3 = {
-			"^ff0000This page is an introduction for the update, not the quest. Please note that it will not be deleted even after completing the quest.^000000"
-		}
-	},
-	[97] = {
-		Title = "Episode 16.2 Terra Gloria",
-		IconName = "ico_ep.bmp",
-		Summary = "Journey to reclaim the disappeared royal symbol.",
-		NpcSpr = "4_EP16_NIHIL",
-		NpcNavi = "prt_cas_q",
-		NpcPosX = 21,
-		NpcPosY = 39,
-		BgName = "reco_97.bmp",
-		QuestInfo1 = {
-			"The young blood of the royal family, Nihil and Spica, want you to join the secret operation.",
-			"Join us on a journey to reclaim the missing royal symbol!"
-		},
-		QuestInfo2 = {
-			"Prerequisites",
-			"Episode 16.1 complete",
-			"Required Level: 100 or higher"
-		},
-		QuestInfo3 = {
-			"^ff0000This page is an introduction for the update, not the quest. Please note that it will not be deleted even after completing the quest.^000000"
-		}
-	},
-	[98] = {
-		Title = "Episode 16.1 Banquet for Heroes",
-		IconName = "ico_ep.bmp",
-		Summary = "You who have tried! Enjoy!!!",
-		NpcSpr = "4_M_ZONDAOYAJI",
-		NpcNavi = "prontera",
-		NpcPosX = 121,
-		NpcPosY = 72,
-		BgName = "reco_98.bmp",
-		QuestInfo1 = {
-			"A banquet is held to celebrate the Morocc's subjugation with the heroes who participated in the expedition.",
-			"If you are an adventurer who participated in the expedition, please receive a banquet invitation letter!"
-		},
-		QuestInfo2 = {
-			"Prerequisites",
-			"Visit the Expeditionary Camp",
-			"Required Level: 100 or higher"
-		},
-		QuestInfo3 = {
-			"^ff0000This page is an introduction for the update, not the quest. Please note that it will not be deleted even after completing the quest.^000000"
-		}
-	},
-	[99] = {
-		Title = "Episode 15 Phantasmagorica",
-		IconName = "ico_ep.bmp",
-		Summary = "Science beyond Juperos",
-		NpcSpr = "4_F_EDEN_OFFICER",
-		NpcNavi = "moc_para01",
-		NpcPosX = 38,
-		NpcPosY = 175,
-		BgName = "reco_99.bmp",
-		QuestInfo1 = {
-			"We are recruiting excavations to participate in the newly discovered Phantasmagorica research.",
-			"Why not explore the scientific civilization that goes beyond Juperos?",
-			"If you would like to join the excavation team, come to the Eden Group right now!"
-		},
-		QuestInfo2 = {
-			"Prerequisites",
-			"Required Level: 140 or higher",
-			"Holder of the Eden Group Mark"
-		},
-		QuestInfo3 = {
-			"^ff0000This page is an introduction for the update, not the quest. Please note that it will not be deleted even after completing the quest.^000000"
+			"^ff0000※該頁面為更新介紹而非任務說明，即使完成任務也不會刪除。^000000"
 		}
 	}
 }

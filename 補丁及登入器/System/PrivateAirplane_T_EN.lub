@@ -1,23 +1,6 @@
--- Original translation works of zackdreaver: https://github.com/zackdreaver/ROenglishRE
--- Continuated by llchrisll at https://github.com/llchrisll/ROenglishRE
--- This file can be distributed, used and modified freely
--- This file shouldn't be claimed as part of your project, unless you fork it from https://github.com/llchrisll/ROenglishRE
--- Last updated: 20231021
-
+-- This software was shared by ROLab. 2024/3/30 ¤U¤È 12:10:55
+-- Using GRF Editor Decompiler (beta 1.0.3)
 StartableMap = {
-	"sch_gld",
-	"prt_gld",
-	"pay_gld",
-	"xmas",
-	"xmas_fild01",
-	"xmas_dun01",
-	"xmas_dun02",
-	"ra_fild10",
-	"ra_fild11",
-	"gw_fild01",
-	"gw_fild02",
-	"oz_dun01",
-	"oz_dun02",
 	"abbey01",
 	"abbey02",
 	"abbey03",
@@ -312,10 +295,6 @@ StartableMap = {
 	"tha_t06",
 	"tha_t07",
 	"tha_t08",
-	"tha_t09",
-	"tha_t10",
-	"tha_t11",
-	"tha_t12",
 	"thor_v01",
 	"thor_v02",
 	"thor_v03",
@@ -325,7 +304,6 @@ StartableMap = {
 	"tur_dun02",
 	"tur_dun03",
 	"tur_dun04",
-	"tur_dun05",
 	"um_fild01",
 	"um_fild02",
 	"um_fild03",
@@ -352,30 +330,9 @@ StartableMap = {
 	"yuno_fild08",
 	"yuno_fild09",
 	"yuno_fild11",
-	"yuno_fild12",
-	"jor_tail",
-	"jor_back1",
-	"jor_back2",
-	"jor_back3",
-	"jor_back4",
-	"jor_back5",
-	"jor_back6",
-	"icecastle"
+	"yuno_fild12"
 }
 EndableMap = {
-	"sch_gld",
-	"prt_gld",
-	"pay_gld",
-	"xmas",
-	"xmas_fild01",
-	"xmas_dun01",
-	"xmas_dun02",
-	"ra_fild10",
-	"ra_fild11",
-	"gw_fild01",
-	"gw_fild02",
-	"oz_dun01",
-	"oz_dun02",
 	"abbey01",
 	"abbey02",
 	"abbey03",
@@ -469,7 +426,9 @@ EndableMap = {
 	"gef_fild09",
 	"gef_fild10",
 	"gef_fild11",
+	"gef_fild12",
 	"gef_fild13",
+	"gef_fild14",
 	"gefenia01",
 	"gefenia02",
 	"gefenia03",
@@ -574,10 +533,18 @@ EndableMap = {
 	"moc_fild01",
 	"moc_fild02",
 	"moc_fild03",
+	"moc_fild04",
+	"moc_fild05",
+	"moc_fild06",
 	"moc_fild07",
+	"moc_fild08",
+	"moc_fild09",
+	"moc_fild10",
 	"moc_fild11",
 	"moc_fild12",
 	"moc_fild13",
+	"moc_fild14",
+	"moc_fild15",
 	"moc_fild16",
 	"moc_fild17",
 	"moc_fild18",
@@ -617,11 +584,13 @@ EndableMap = {
 	"pay_fild02",
 	"pay_fild03",
 	"pay_fild04",
+	"pay_fild05",
 	"pay_fild06",
 	"pay_fild07",
 	"pay_fild08",
 	"pay_fild09",
 	"pay_fild10",
+	"pay_fild11",
 	"payon",
 	"prontera",
 	"prt_fild00",
@@ -706,38 +675,36 @@ EndableMap = {
 	"yuno_fild08",
 	"yuno_fild09",
 	"yuno_fild11",
-	"yuno_fild12",
-	"jor_tail",
-	"jor_back1",
-	"jor_back2",
-	"jor_back3",
-	"jor_back4",
-	"jor_back5",
-	"jor_back6",
-	"icecastle"
+	"yuno_fild12"
 }
-
 NeedItem = {
-	{ 6909, "Silvervine_Cat_Fruit" },
-	{ 25464, "World_Tour_Ticket" }
+	{
+		6417,
+		"Silvervine"
+	},
+	{
+		25464,
+		"World_Tour_Ticket"
+	}
 }
 
-function main()
+-- Function #0
+main = function()
 	for k, v in pairs(StartableMap) do
 		result, msg = InsertStartableMap(v)
-		if not result then
+		if not result == true then
 			return false, msg
 		end
 	end
 	for k, v in pairs(EndableMap) do
 		result, msg = InsertEndableMap(v)
-		if not result then
+		if not result == true then
 			return false, msg
 		end
 	end
 	for k, v in pairs(NeedItem) do
 		result, msg = InsertNeedItem(v[1], v[2])
-		if not result then
+		if not result == true then
 			return false, msg
 		end
 	end
