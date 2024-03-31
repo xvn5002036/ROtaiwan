@@ -50,7 +50,7 @@ tbl = {
 		},
 		slotCount = 0,
 		ClassNum = 2500,
-	--costume = false
+	      --costume = true
 	},
 	[30002] = {	--adding this here will add the item into the client without adding it directly to kro item info and will add [ServerNameRO Custom Additions] tag to it
 		unidentifiedDisplayName = "Sader's Holy Book",
