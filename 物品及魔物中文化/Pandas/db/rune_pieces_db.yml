@@ -1,0 +1,41 @@
+﻿#####################################################################################
+# 符文碎片資料庫
+#####################################################################################
+#
+# 此檔案是符文碎片 (Rune Piece) 資料庫,
+# 它是符文石碑系統的組成部分.
+#
+# 此資料庫定義了符文碎片的編號和啟用該碎片所需要的物品清單編號等,
+# 全部資訊都可以在客戶端 LUB 檔案中提取.
+#
+#####################################################################################
+# - TagId                      [數值型] 符文碎片所屬的分組編號
+#
+#                              對應客戶端 rune_info.lub 中的 Runetbl_info 陣列中內容部分的 Key
+#                              通常會得到像 RUNETAGIDTBL.EPISODE17 這樣的常量,
+#                              該常量可以 runesystemid.lub 中找到 RUNETAGIDTBL 陣列中對它定義編號等於 17
+#
+#   RuneId                     [數值型] 符文碎片的編號
+#
+#                              對應客戶端 runesystemid.lub 中的 RUNEIDTBL 陣列中各專案的 Value
+#
+#   RuneName                   [字串] 符文碎片的名稱 (將作為常量被匯出到指令碼引擎)
+#
+#                              對應客戶端 runesystemid.lub 中的 RUNEIDTBL 陣列中各專案的 Key
+#
+#   ItemListId                 [數值型] 啟用符文碎片所需物品的清單編號 (請見: rune_itemlists_db.yml)
+#
+#                              對應客戶端 rune_info.lub 中符文碎片陣列裡的 Rune_ActiveList 欄位
+######################################################################################
+
+Header:
+  Type: RUNE_PIECES_DB
+  Version: 1
+
+Footer:
+  Imports:
+  - Path: db/pre-re/rune_pieces_db.yml
+    Mode: Prerenewal
+  - Path: db/re/rune_pieces_db.yml
+    Mode: Renewal
+  - Path: db/import/rune_pieces_db.yml

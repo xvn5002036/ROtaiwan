@@ -1,0 +1,351 @@
+﻿#####################################################################################
+# 符文集資料庫
+#####################################################################################
+#
+# 此檔案是符文集 (Rune Set) 資料庫,
+# 它是符文石碑系統的組成部分.
+#
+# 此資料庫包含了啟用符文集所需道具和強化成功率等必要資訊,
+# 其中大部分資訊都可以在客戶端 LUB 檔案中提取.
+#
+#####################################################################################
+# - TagId                      [數值型] 符文集所屬的分組編號
+#
+#                              對應客戶端 runeset_info.lub 中的分組編號,
+#                              例如: RUNETAGIDTBL.EPISODE17 在 runesystemid.lub 中定義的編號是 17
+#
+#   RuneSetId                  [數值型] 符文集的數值編號
+#
+#                              對應客戶端 runeset_info.lub 中第二層陣列的 Key
+#                              例如: RUNEIDTBL.Rp_Ep17_Melee 對應的編號在 runesystemid.lub 的
+#                              RUNESETIDTBL 陣列中查到的值是: 1263000
+#
+#   RuneSetName                [字串] 符文集的名稱 (將作為常量被匯出到指令碼引擎)
+#
+#                              對應客戶端 runeset_info.lub 中第二層陣列的 Value 中的 RuneSetRes 欄位
+#                              例如: RUNESETIDTBL.Rt_Ep17_Doubt 的 RuneSetRes 是 "Rt_Ep17_Doubt"
+#
+#   RuneSetSlots               [字串陣列] 用於組成該符文集的符文碎片
+#                              最多隻允許設定 6 個, 為空的需要填寫 "false"
+#
+#                              對應客戶端 runeset_info.lub 中第二層陣列的 Value 中的 RuneSet_SlotList 陣列
+#                              在 RuneSet_SlotList 中為 0 的專案在這裡記得需要填寫 "false"
+#
+#   ActivateItemListId         [數值型] 啟用符文集所需物品的清單編號 (請見: rune_itemlists_db.yml)
+#
+#                              對應客戶端 runeset_info.lub 中第二層陣列的 Value 中的 RuneSetActiveList 欄位
+#                              清單編號可以在服務端 db/rune_itemlists_db.yml 查到所需要的道具和數量
+#
+#   UpgradeItemLists           [數值型陣列] 用於強化符文集的 15 個物品清單編號 (請見: rune_itemlists_db.yml)
+#
+#                              對應客戶端 runeset_info.lub 中第二層陣列的 Value 中的 RuneSet_UpGradeList 陣列
+#                              清單編號可以在服務端 db/rune_itemlists_db.yml 查到所需要的道具和數量
+#
+#   UpgradeChance              [數值型陣列] 與 UpgradeItemLists 對應的 15 個強化成功率 (萬分率)
+#
+#                              對應客戶端 runeset_info.lub 中第二層陣列的 Value 中的 RuneSet_UpGrade_Percentage_table 欄位
+#                              得到欄位的值之後再獲取 runeset_info.lub 頂部 GradeTable 陣列中對應的機率值
+#
+#   UpgradeFailureBonus        [數值型陣列] 與 UpgradeItemLists 對應的 15 個強化失敗補償機率.
+#                              強化失敗後的下一次強化會在原先的基礎上增加額外的補償機率.
+#
+#                              對應客戶端 runeset_info.lub 中第二層陣列的 Value 中的 RuneSet_UpGrade_Percentage_table_Fail 欄位
+#                              得到欄位的值之後再獲取 runeset_info.lub 頂部 GradeTable_Fail 陣列中對應的機率值
+#
+#   RuneStatusScript           [字串, 可選] 當玩家裝備該符文集時執行的效果指令碼.
+#                              執行指令碼時以下變數將被自動賦值:
+#                              @rune_active_pieces 會被設為該符文集中啟用的符文碎片數量
+#                              @rune_active_level 會被設為該符文集當前的強化等級
+#
+#                              對應客戶端 runeset_desc.lub 中特定字符集的描述來編寫效果指令碼
+######################################################################################
+
+Header:
+  Type: RUNE_SETS_DB
+  Version: 1
+
+Body:
+  - TagId: 17
+    RuneSetId: 1260008
+    RuneSetName: "Rt_Ep17_Green"
+    RuneSetSlots: ["Rp_Ep17_Aries", "Rp_Ep17_Machine", "Rp_Ep17_Allergy", "Rp_Ep17_Pitaya", "false", "Rp_Ep17_Cat"]
+    ActivateItemListId: 9
+    UpgradeItemLists: [60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74]
+    UpgradeChance: [10000, 10000, 10000, 9000, 9000, 8000, 7000, 6000, 5000, 4000, 3000, 2000, 1000, 500, 100]
+    UpgradeFailureBonus: [4000, 4000, 4000, 3600, 3600, 3200, 2800, 2400, 2000, 1600, 1200, 800, 400, 200, 40]
+    RuneStatusScript: |
+      if(@rune_active_pieces >= 2){
+        bonus2 bAddRace,RC_Formless,@rune_active_level/5;
+        bonus2 bMagicAddRace,RC_Formless,@rune_active_level/5;
+      }
+      if(@rune_active_pieces >= 3){
+        bonus2 bAddRace,RC_Formless,2;
+        bonus2 bMagicAddRace,RC_Formless,2;
+        bonus2 bAddRace,RC_DemiHuman,3;
+        bonus2 bMagicAddRace,RC_DemiHuman,3;
+      }
+      if(@rune_active_pieces >= 5){
+        bonus bAtkRate,7;
+        bonus bMatkRate,7;
+      }
+
+  - TagId: 17
+    RuneSetId: 1260009
+    RuneSetName: "Rt_Ep17_Malfun"
+    RuneSetSlots: ["false", "Rp_Ep17_Sweety", "Rp_Ep17_Machine", "false", "Rp_Ep17_Garden", "Rp_Ep17_Bath"]
+    ActivateItemListId: 10
+    UpgradeItemLists: [60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74]
+    UpgradeChance: [10000, 10000, 10000, 9000, 9000, 8000, 7000, 6000, 5000, 4000, 3000, 2000, 1000, 500, 100]
+    UpgradeFailureBonus: [4000, 4000, 4000, 3600, 3600, 3200, 2800, 2400, 2000, 1600, 1200, 800, 400, 200, 40]
+    RuneStatusScript: |
+      if(@rune_active_pieces >= 2){
+        bonus2 bAddSize,Size_Large,@rune_active_level/3;
+      }
+      if(@rune_active_pieces >= 3){
+        bonus bLongAtkRate,2;
+      }
+      if(@rune_active_pieces >= 5){
+        bonus bLongAtkRate,5;
+      }
+
+  - TagId: 17
+    RuneSetId: 1260010
+    RuneSetName: "Rt_Ep17_Wing"
+    RuneSetSlots: ["Rp_Ep17_Aries", "Rp_Ep17_Papila", "Rp_Ep17_Tree", "Rp_Ep17_Sanare", "false", "Rp_Ep17_Book"]
+    ActivateItemListId: 11
+    UpgradeItemLists: [60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74]
+    UpgradeChance: [10000, 10000, 10000, 9000, 9000, 8000, 7000, 6000, 5000, 4000, 3000, 2000, 1000, 500, 100]
+    UpgradeFailureBonus: [4000, 4000, 4000, 3600, 3600, 3200, 2800, 2400, 2000, 1600, 1200, 800, 400, 200, 40]
+    RuneStatusScript: |
+      if(@rune_active_pieces >= 2){
+        bonus bBaseAtk,3*(@rune_active_level/3);
+        bonus bMatk,3*(@rune_active_level/3);
+        bonus bMaxHPRate,@rune_active_level/5;
+        bonus bMaxSPRate,@rune_active_level/5;
+      }
+      if(@rune_active_pieces >= 3){
+        bonus bMaxHPRate,1;
+        bonus bMaxSPRate,1;
+        bonus bBaseAtk,15;
+        bonus bMatk,15;
+      }
+      if(@rune_active_pieces >= 5){
+        bonus bMaxHPRate,3;
+        bonus bMaxSPRate,3;
+        bonus bBaseAtk,45;
+        bonus bMatk,45;
+      }
+
+  - TagId: 17
+    RuneSetId: 1260011
+    RuneSetName: "Rt_Ep17_Harmful"
+    RuneSetSlots: ["Rp_Ep17_Bellare", "Rp_Ep17_Addict", "Rp_Ep17_Plaga", "false", "Rp_Ep17_Dolor", "Rp_Ep17_Withdraw"]
+    ActivateItemListId: 12
+    UpgradeItemLists: [60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74]
+    UpgradeChance: [10000, 10000, 10000, 9000, 9000, 8000, 7000, 6000, 5000, 4000, 3000, 2000, 1000, 500, 100]
+    UpgradeFailureBonus: [4000, 4000, 4000, 3600, 3600, 3200, 2800, 2400, 2000, 1600, 1200, 800, 400, 200, 40]
+    RuneStatusScript: |
+      if(@rune_active_pieces >= 2){
+        bonus2 bAddEle,Ele_Dark,@rune_active_level/5;
+        bonus2 bMagicAddEle,Ele_Dark,@rune_active_level/5;
+      }
+      if(@rune_active_pieces >= 3){
+        bonus2 bAddEle,Ele_Dark,3;
+        bonus2 bMagicAddEle,Ele_Dark,3;
+      }
+      if(@rune_active_pieces >= 5 && @rune_active_level >= 15){
+        bonus2 bHPDrainRate,20,2;
+      }
+
+  - TagId: 17
+    RuneSetId: 1260012
+    RuneSetName: "Rt_Ep17_Boss"
+    RuneSetSlots: ["Rp_Ep17_Iron", "Rp_Ep17_Tiger", "Rp_Ep17_Bestia", "Rp_Ep17_Redpepper", "Rp_Ep17_Sweety", "Rp_Ep17_Cat"]
+    ActivateItemListId: 13
+    UpgradeItemLists: [60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74]
+    UpgradeChance: [8000, 8000, 8000, 7000, 7000, 6000, 5000, 4000, 3000, 2000, 1000, 500, 500, 250, 50]
+    UpgradeFailureBonus: [3000, 3000, 3000, 2500, 2500, 2000, 1500, 1000, 900, 800, 600, 500, 300, 100, 20]
+    RuneStatusScript: |
+      if(@rune_active_pieces >= 2){
+        bonus2 bAddRace,RC_DemiHuman,@rune_active_level/3;
+        bonus2 bMagicAddRace,RC_DemiHuman,@rune_active_level/3;
+      }
+      if(@rune_active_pieces >= 3){
+        bonus2 bAddRace,RC_DemiHuman,2;
+        bonus2 bMagicAddRace,RC_DemiHuman,2;
+      }
+      if(@rune_active_pieces >= 5 && @rune_active_level >= 15){
+        bonus2 bSPDrainRate,10,1;
+      }
+
+  - TagId: 17
+    RuneSetId: 1260000
+    RuneSetName: "Rt_Ep17_Doubt"
+    RuneSetSlots: ["Rp_Ep17_Melee", "Rp_Ep17_Range", "false", "false", "Rp_Ep17_Magic", "Rp_Ep17_Razor"]
+    ActivateItemListId: 1
+    UpgradeItemLists: [45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59]
+    UpgradeChance: [10000, 10000, 10000, 9000, 9000, 8000, 7000, 6000, 5000, 4000, 3000, 2000, 1000, 500, 100]
+    UpgradeFailureBonus: [4000, 4000, 4000, 3600, 3600, 3200, 2800, 2400, 2000, 1600, 1200, 800, 400, 200, 40]
+    RuneStatusScript: |
+      if(@rune_active_pieces >= 2){
+        bonus bBaseAtk,2*(@rune_active_level/3);
+        bonus bMatk,2*(@rune_active_level/3);
+      }
+      if(@rune_active_pieces >= 4){
+        bonus2 bAddClass,Class_All,1;
+        bonus2 bMagicAddClass,Class_All,1;
+        bonus bBaseAtk,10;
+        bonus bMatk,10;
+      }
+
+  - TagId: 17
+    RuneSetId: 1260001
+    RuneSetName: "Rt_Ep17_Auto"
+    RuneSetSlots: ["false", "false", "Rp_Ep17_Autoa", "Rp_Ep17_Autob", "false", "false"]
+    ActivateItemListId: 2
+    UpgradeItemLists: [45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59]
+    UpgradeChance: [10000, 10000, 10000, 9000, 9000, 8000, 7000, 6000, 5000, 4000, 3000, 2000, 1000, 500, 100]
+    UpgradeFailureBonus: [4000, 4000, 4000, 3600, 3600, 3200, 2800, 2400, 2000, 1600, 1200, 800, 400, 200, 40]
+    RuneStatusScript: |
+      if(@rune_active_pieces >= 2){
+        bonus bDef,100;
+        bonus bMdef,25;
+        bonus bMaxHPRate,@rune_active_level/3;
+      }
+
+  - TagId: 17
+    RuneSetId: 1260002
+    RuneSetName: "Rt_Ep17_Secret"
+    RuneSetSlots: ["Rp_Ep17_Bellare", "Rp_Ep17_Sanare", "false", "Rp_Ep17_Bestia", "false", "false"]
+    ActivateItemListId: 3
+    UpgradeItemLists: [45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59]
+    UpgradeChance: [10000, 10000, 10000, 9000, 9000, 8000, 7000, 6000, 5000, 4000, 3000, 2000, 1000, 500, 100]
+    UpgradeFailureBonus: [4000, 4000, 4000, 3600, 3600, 3200, 2800, 2400, 2000, 1600, 1200, 800, 400, 200, 40]
+    RuneStatusScript: |
+      if(@rune_active_pieces >= 2){
+        bonus2 bAddEle,Ele_Poison,2;
+        bonus2 bMagicAddEle,Ele_Poison,2;
+      }
+      if(@rune_active_pieces >= 3){
+        bonus bAspdRate,4;
+      }
+
+  - TagId: 17
+    RuneSetId: 1260003
+    RuneSetName: "Rt_Ep17_Mutant"
+    RuneSetSlots: ["Rp_Ep17_Plaga", "Rp_Ep17_Dolor", "false", "false", "Rp_Ep17_Venenum", "false"]
+    ActivateItemListId: 4
+    UpgradeItemLists: [45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59]
+    UpgradeChance: [10000, 10000, 10000, 9000, 9000, 8000, 7000, 6000, 5000, 4000, 3000, 2000, 1000, 500, 100]
+    UpgradeFailureBonus: [4000, 4000, 4000, 3600, 3600, 3200, 2800, 2400, 2000, 1600, 1200, 800, 400, 200, 40]
+    RuneStatusScript: |
+      if(@rune_active_pieces >= 2){
+        bonus bCastRate,-(@rune_active_level/5);
+      }
+      if(@rune_active_pieces >= 3){
+        bonus2 bMagicAddEle,Ele_Neutral,3;
+      }
+
+  - TagId: 17
+    RuneSetId: 1260004
+    RuneSetName: "Rt_Ep17_Miguel"
+    RuneSetSlots: ["Rp_Ep17_Iron", "false", "false", "Rp_Ep17_Sweety", "Rp_Ep17_Tiger", "false"]
+    ActivateItemListId: 5
+    UpgradeItemLists: [45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59]
+    UpgradeChance: [8000, 8000, 8000, 7000, 7000, 6000, 5000, 4000, 3000, 2000, 1000, 500, 500, 250, 50]
+    UpgradeFailureBonus: [3000, 3000, 3000, 2500, 2500, 2000, 1500, 1000, 900, 800, 600, 500, 300, 100, 20]
+    RuneStatusScript: |
+      if(@rune_active_pieces >= 2){
+        bonus bCritAtkRate,3 + (@rune_active_level/5)*2;
+      }
+      if(@rune_active_pieces >= 3){
+        bonus bCritAtkRate, 8;
+      }
+
+  - TagId: 17
+    RuneSetId: 1260005
+    RuneSetName: "Rt_Ep17_Overload"
+    RuneSetSlots: ["Rp_Ep17_Redpepper", "false", "false", "Rp_Ep17_Addict", "Rp_Ep17_Caution", "Rp_Ep17_Withdraw"]
+    ActivateItemListId: 6
+    UpgradeItemLists: [60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74]
+    UpgradeChance: [10000, 10000, 10000, 9000, 9000, 8000, 7000, 6000, 5000, 4000, 3000, 2000, 1000, 500, 100]
+    UpgradeFailureBonus: [4000, 4000, 4000, 3600, 3600, 3200, 2800, 2400, 2000, 1600, 1200, 800, 400, 200, 40]
+    RuneStatusScript: |
+      if(@rune_active_pieces >= 2){
+        bonus bMatk,15 + (@rune_active_level/3)*3;
+      }
+      if(@rune_active_pieces >= 3){
+        bonus2 bMagicAtkEle,Ele_All,1;
+      }
+      if(@rune_active_pieces >= 4){
+        bonus2 bMagicAtkEle,Ele_All,4;
+      }
+
+  - TagId: 17
+    RuneSetId: 1260006
+    RuneSetName: "Rt_Ep17_Bath"
+    RuneSetSlots: ["Rp_Ep17_Fish", "false", "false", "Rp_Ep17_Bath", "Rp_Ep17_Sewage", "false"]
+    ActivateItemListId: 7
+    UpgradeItemLists: [60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74]
+    UpgradeChance: [10000, 10000, 10000, 9000, 9000, 8000, 7000, 6000, 5000, 4000, 3000, 2000, 1000, 500, 100]
+    UpgradeFailureBonus: [4000, 4000, 4000, 3600, 3600, 3200, 2800, 2400, 2000, 1600, 1200, 800, 400, 200, 40]
+    RuneStatusScript: |
+      if(@rune_active_pieces >= 2){
+        bonus2 bAddRace,RC_Brute,@rune_active_level/5;
+        bonus2 bMagicAddRace,RC_Brute,@rune_active_level/5;
+        bonus2 bAddRace,RC_Fish,@rune_active_level/5;
+        bonus2 bMagicAddRace,RC_Fish,@rune_active_level/5;
+      }
+      if(@rune_active_pieces >= 3){
+        bonus2 bAddRace,RC_Brute,2;
+        bonus2 bMagicAddRace,RC_Brute,2;
+        bonus2 bAddRace,RC_Fish,2;
+        bonus2 bMagicAddRace,RC_Fish,2;
+      }
+
+  - TagId: 17
+    RuneSetId: 1260007
+    RuneSetName: "Rt_Ep17_Garden"
+    RuneSetSlots: ["Rp_Ep17_Papila", "Rp_Ep17_Machine", "Rp_Ep17_Tree", "Rp_Ep17_Aries", "Rp_Ep17_Book", "Rp_Ep17_Garden"]
+    ActivateItemListId: 8
+    UpgradeItemLists: [60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74]
+    UpgradeChance: [10000, 10000, 10000, 9000, 9000, 8000, 7000, 6000, 5000, 4000, 3000, 2000, 1000, 500, 100]
+    UpgradeFailureBonus: [4000, 4000, 4000, 3600, 3600, 3200, 2800, 2400, 2000, 1600, 1200, 800, 400, 200, 40]
+    RuneStatusScript: |
+      if(@rune_active_pieces >= 2){
+        bonus2 bAddRace,RC_Plant,@rune_active_level/5;
+        bonus2 bMagicAddRace,RC_Plant,@rune_active_level/5;
+        bonus2 bAddRace,RC_Insect,@rune_active_level/5;
+        bonus2 bMagicAddRace,RC_Insect,@rune_active_level/5;
+      }
+      if(@rune_active_pieces >= 4){
+        bonus2 bAddRace,RC_Plant,2;
+        bonus2 bMagicAddRace,RC_Plant,2;
+        bonus2 bAddRace,RC_Insect,3;
+        bonus2 bMagicAddRace,RC_Insect,3;
+      }
+      if(@rune_active_pieces >= 6){
+        bonus2 bSubEle,Ele_All,3;
+      }
+
+  - TagId: 500
+    RuneSetId: 1260013
+    RuneSetName: "Rt_21th_Event"
+    RuneSetSlots: ["Rp_21th_Poring", "Rp_21th_Lunatic", "Rp_21th_Fabre", "false", "false", "Rp_21th_Food"]
+    ActivateItemListId: 75
+    UpgradeItemLists: [80, 81, 82, 83, 84, 84, 86, 87, 88, 89, 90, 91, 92, 92, 94]
+    UpgradeChance: [100000, 100000, 100000, 90000, 90000, 90000, 80000, 80000, 80000, 70000, 70000, 70000, 60000, 60000, 50000]
+    UpgradeFailureBonus: [0, 0, 0, 2100, 2100, 2100, 2100, 2100, 2100, 2100, 2100, 2100, 2100, 2100, 2100]
+    RuneStatusScript: |
+      if(@rune_active_pieces >= 2){
+        bonus bBaseAtk,@rune_active_level/3;
+        bonus bMatkRate,@rune_active_level/3;
+      }
+      if(@rune_active_pieces >= 3){
+        bonus2 bAddItemHealRate,1100010,100;
+        bonus2 bAddItemHealRate,1100011,100;
+      }
+      if(@rune_active_pieces >= 4){
+        bonus bBaseAtk,10;
+        bonus bMatk,10;
+      }

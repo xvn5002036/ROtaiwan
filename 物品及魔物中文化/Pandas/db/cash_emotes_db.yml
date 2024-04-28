@@ -1,0 +1,206 @@
+﻿#####################################################################################
+# 表情商城資料庫
+#####################################################################################
+#
+# 此檔案是表情商城 (Cash Emotes) 資料庫.
+#
+# 此資料庫定義了不同的表情包及其售價、發售的起始和結束時間等,
+# 全部資訊都可以在客戶端 LUB 檔案中提取.
+#
+#####################################################################################
+# - PackId                     [數值型] 表情包的編號
+#
+#                              對應客戶端 cashemotionlistdefine.lub 中的
+#                              EMOTION_PACK_TYPE 陣列中的 Value
+#
+#   PackType                   [數值型] 表情包的型別
+#
+#                              1: 與賬號繫結, 購買後全賬號下的角色都可用
+#                              2: 與角色繫結, 購買後僅當前角色可用
+#
+#                              對應客戶端 cashemotionlistdefine.lub 中的
+#                              EMOTION_PACK_SALE_ATTRIBUTION_TYPE 字典中的 Value (不確定)
+#
+#   PackPrice                  [數值型] 需要支付多少個 "喵楊桃果實" 才能購買, 相當於是售價
+#                              貨幣道具 "喵楊桃果實" 的道具編號是 6909, 客戶端硬編碼暫時不能修改
+#
+#                              對應客戶端 cashemotionlistdefine.lub 中的
+#                              EMOTION_PACK_PRICE 字典中的 Value
+#
+#
+#   SaleStart                  [數值型] 表情包發售的開始時間, 格式為: YYYYMMDD
+#
+#                              對應客戶端 cashemotionlistdefine.lub 中的
+#                              EMOTION_PACK_LIMITED_TIME_START 字典中的 Value
+#
+#   SaleEnd                    [數值型] 表情包發售的結束時間, 格式為: YYYYMMDD
+#
+#                              對應客戶端 cashemotionlistdefine.lub 中的
+#                              EMOTION_PACK_LIMITED_TIME_END 字典中的 Value
+#
+#   RentalPeriod               [數值型] 購買後可以使用多少天, 0 表示無限制
+#
+#                              對應客戶端 cashemotionlistdefine.lub 中的
+#                              EMOTION_PACK_PERIOD_RENTAL 字典中的 Value
+#
+#   EmotesList                 [列表陣列] 表情包所包含的表情
+#
+#                              對應客戶端 cashemotionlist.lub 中的表情包定義資料
+#
+#                              - 第一種定義正規化:
+#                                使用 InsertOrderList 將表情常量新增到表情包中
+#                                EPT_BASIC(PackId=0) 和 EPT_21ST_ANNIVERSARY(PackId=1) 都屬於這種
+#
+#                              - 第二種定義正規化:
+#                                使用 InsertGroupEmotion 將一組 act/spr 作為表情進行登記
+#                                EPT_2023CHUSEOK(PackId=2) 和 EPT_2023THXGIVING(PackId=3) 都屬於這種
+######################################################################################
+
+Header:
+  Type: CASH_EMOTES_DB
+  Version: 1
+Body:
+  - PackId: 0
+    PackType: 1
+    PackPrice: 0
+    SaleStart: 0
+    SaleEnd: 0
+    RentalPeriod: 0
+    EmotesList:
+      - ET_SURPRISE
+      - ET_QUESTION
+      - ET_DELIGHT
+      - ET_THROB
+      - ET_BIGTHROB
+      - ET_SWEAT
+      - ET_AHA
+      - ET_FRET
+      - ET_ANGER
+      - ET_MONEY
+      - ET_THINK
+      - ET_ROCK
+      - ET_SCISSOR
+      - ET_WRAP
+      - ET_THANKS
+      - ET_KEK
+      - ET_SORRY
+      - ET_SMILE
+      - ET_PROFUSELY_SWEAT
+      - ET_SCRATCH
+      - ET_BEST
+      - ET_STARE_ABOUT
+      - ET_HUK
+      - ET_O
+      - ET_X
+      - ET_HELP
+      - ET_GO
+      - ET_CRY
+      - ET_KIK
+      - ET_CHUP
+      - ET_CHUPCHUP
+      - ET_HNG
+      - ET_OK
+      - ET_STARE
+      - ET_HUNGRY
+      - ET_COOL
+      - ET_MERONG
+      - ET_SHY
+      - ET_GOODBOY
+      - ET_SPTIME
+      - ET_SEXY
+      - ET_COMEON
+      - ET_SLEEPY
+      - ET_CONGRATULATION
+      - ET_HPTIME
+      - ET_SPARK
+      - ET_CONFUSE
+      - ET_OHNO
+      - ET_HUM
+      - ET_BLABLA
+      - ET_OTL
+      - ET_LUV
+      - ET_MOBILE
+      - ET_MAIL
+      - ET_ANTENNA1
+      - ET_ANTENNA2
+      - ET_ANTENNA3
+      - ET_HUM2
+      - ET_ABS
+      - ET_OOPS
+      - ET_SPIT
+      - ET_ENE
+      - ET_PANIC
+      - ET_WHISP
+      - ET_FLAG
+      - ET_INDONESIA_FLAG
+      - ET_PH_FLAG
+      - ET_MY_FLAG
+      - ET_SI_FLAG
+      - ET_BR_FLAG
+      - ET_INDIA_FLAG
+      - ET_FLAG8
+      - ET_FLAG9
+      - ET_DICE1
+      - ET_DICE2
+      - ET_DICE3
+      - ET_DICE4
+      - ET_DICE5
+      - ET_DICE6
+      - ET_YUT1
+      - ET_YUT2
+      - ET_YUT3
+      - ET_YUT4
+      - ET_YUT5
+      - ET_YUT6
+      - ET_YUT7
+  - PackId: 1
+    PackType: 1
+    PackPrice: 0
+    SaleStart: 20230802
+    SaleEnd: 20230830
+    RentalPeriod: 0
+    EmotesList:
+      - ET_KIK
+      - ET_GO
+      - ET_COOL
+      - ET_SPARK
+      - ET_QUESTION
+      - ET_CUSTOM_1
+      - ET_CUSTOM_2
+      - ET_CUSTOM_3
+      - ET_CUSTOM_4
+      - ET_CUSTOM_5
+  - PackId: 2
+    PackType: 1
+    PackPrice: 10
+    SaleStart: 20230906
+    SaleEnd: 0
+    RentalPeriod: 0
+    EmotesList:
+      - ET_THANKS
+      - ET_AHA
+      - ET_OK
+      - ET_HUNGRY
+      - ET_SURPRISE
+      - ET_QUESTION
+      - ET_DELIGHT
+      - ET_SCISSOR
+      - ET_ROCK
+      - ET_WRAP
+  - PackId: 3
+    PackType: 1
+    PackPrice: 10
+    SaleStart: 20231101
+    SaleEnd: 0
+    RentalPeriod: 0
+    EmotesList:
+      - ET_SEXY
+      - ET_MERONG
+      - ET_SHY
+      - ET_COMEON
+      - ET_HUNGRY
+      - ET_SPTIME
+      - ET_HPTIME
+      - ET_BIGTHROB
+      - ET_SWEAT
+      - ET_BLABLA

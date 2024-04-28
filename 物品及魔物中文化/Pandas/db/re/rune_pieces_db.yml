@@ -1,0 +1,175 @@
+﻿#####################################################################################
+# 符文碎片資料庫
+#####################################################################################
+#
+# 此檔案是符文碎片 (Rune Piece) 資料庫,
+# 它是符文石碑系統的組成部分.
+#
+# 此資料庫定義了符文碎片的編號和啟用該碎片所需要的物品清單編號等,
+# 全部資訊都可以在客戶端 LUB 檔案中提取.
+#
+#####################################################################################
+# - TagId                      [數值型] 符文碎片所屬的分組編號
+#
+#                              對應客戶端 rune_info.lub 中的 Runetbl_info 陣列中內容部分的 Key
+#                              通常會得到像 RUNETAGIDTBL.EPISODE17 這樣的常量,
+#                              該常量可以 runesystemid.lub 中找到 RUNETAGIDTBL 陣列中對它定義編號等於 17
+#
+#   RuneId                     [數值型] 符文碎片的編號
+#
+#                              對應客戶端 runesystemid.lub 中的 RUNEIDTBL 陣列中各專案的 Value
+#
+#   RuneName                   [字串] 符文碎片的名稱 (將作為常量被匯出到指令碼引擎)
+#
+#                              對應客戶端 runesystemid.lub 中的 RUNEIDTBL 陣列中各專案的 Key
+#
+#   ItemListId                 [數值型] 啟用符文碎片所需物品的清單編號 (請見: rune_itemlists_db.yml)
+#
+#                              對應客戶端 rune_info.lub 中符文碎片陣列裡的 Rune_ActiveList 欄位
+######################################################################################
+
+Header:
+  Type: RUNE_PIECES_DB
+  Version: 1
+
+Body:
+  - TagId: 17
+    RuneId: 1263014
+    RuneName: "Rp_Ep17_Addict"
+    ItemListId: 28
+  - TagId: 17
+    RuneId: 1263015
+    RuneName: "Rp_Ep17_Caution"
+    ItemListId: 29
+  - TagId: 17
+    RuneId: 1263016
+    RuneName: "Rp_Ep17_Withdraw"
+    ItemListId: 30
+  - TagId: 17
+    RuneId: 1263017
+    RuneName: "Rp_Ep17_Bath"
+    ItemListId: 31
+  - TagId: 17
+    RuneId: 1263018
+    RuneName: "Rp_Ep17_Papila"
+    ItemListId: 32
+  - TagId: 17
+    RuneId: 1263019
+    RuneName: "Rp_Ep17_Book"
+    ItemListId: 33
+  - TagId: 17
+    RuneId: 1263020
+    RuneName: "Rp_Ep17_Garden"
+    ItemListId: 34
+  - TagId: 17
+    RuneId: 1263021
+    RuneName: "Rp_Ep17_Sewage"
+    ItemListId: 35
+  - TagId: 17
+    RuneId: 1263022
+    RuneName: "Rp_Ep17_Allergy"
+    ItemListId: 36
+  - TagId: 17
+    RuneId: 1263023
+    RuneName: "Rp_Ep17_Fish"
+    ItemListId: 37
+  - TagId: 17
+    RuneId: 1263024
+    RuneName: "Rp_Ep17_Pitaya"
+    ItemListId: 38
+  - TagId: 17
+    RuneId: 1263025
+    RuneName: "Rp_Ep17_Tree"
+    ItemListId: 39
+  - TagId: 17
+    RuneId: 1263026
+    RuneName: "Rp_Ep17_Aries"
+    ItemListId: 40
+  - TagId: 17
+    RuneId: 1263027
+    RuneName: "Rp_Ep17_Machine"
+    ItemListId: 41
+  - TagId: 17
+    RuneId: 1263028
+    RuneName: "Rp_Ep17_Sweety"
+    ItemListId: 42
+  - TagId: 17
+    RuneId: 1263029
+    RuneName: "Rp_Ep17_Cat"
+    ItemListId: 43
+  - TagId: 17
+    RuneId: 1263030
+    RuneName: "Rp_Ep17_Tiger"
+    ItemListId: 44
+  - TagId: 17
+    RuneId: 1263000
+    RuneName: "Rp_Ep17_Melee"
+    ItemListId: 14
+  - TagId: 17
+    RuneId: 1263001
+    RuneName: "Rp_Ep17_Range"
+    ItemListId: 15
+  - TagId: 17
+    RuneId: 1263002
+    RuneName: "Rp_Ep17_Magic"
+    ItemListId: 16
+  - TagId: 17
+    RuneId: 1263003
+    RuneName: "Rp_Ep17_Razor"
+    ItemListId: 17
+  - TagId: 17
+    RuneId: 1263004
+    RuneName: "Rp_Ep17_Autoa"
+    ItemListId: 18
+  - TagId: 17
+    RuneId: 1263005
+    RuneName: "Rp_Ep17_Autob"
+    ItemListId: 19
+  - TagId: 17
+    RuneId: 1263006
+    RuneName: "Rp_Ep17_Bellare"
+    ItemListId: 20
+  - TagId: 17
+    RuneId: 1263007
+    RuneName: "Rp_Ep17_Sanare"
+    ItemListId: 21
+  - TagId: 17
+    RuneId: 1263008
+    RuneName: "Rp_Ep17_Plaga"
+    ItemListId: 22
+  - TagId: 17
+    RuneId: 1263009
+    RuneName: "Rp_Ep17_Bestia"
+    ItemListId: 23
+  - TagId: 17
+    RuneId: 1263010
+    RuneName: "Rp_Ep17_Venenum"
+    ItemListId: 24
+  - TagId: 17
+    RuneId: 1263011
+    RuneName: "Rp_Ep17_Dolor"
+    ItemListId: 25
+  - TagId: 17
+    RuneId: 1263012
+    RuneName: "Rp_Ep17_Iron"
+    ItemListId: 26
+  - TagId: 17
+    RuneId: 1263013
+    RuneName: "Rp_Ep17_Redpepper"
+    ItemListId: 27
+  - TagId: 500
+    RuneId: 1263032
+    RuneName: "Rp_21th_Lunatic"
+    ItemListId: 77
+  - TagId: 500
+    RuneId: 1263033
+    RuneName: "Rp_21th_Fabre"
+    ItemListId: 78
+  - TagId: 500
+    RuneId: 1263031
+    RuneName: "Rp_21th_Poring"
+    ItemListId: 76
+  - TagId: 500
+    RuneId: 1263034
+    RuneName: "Rp_21th_Food"
+    ItemListId: 79

@@ -1,0 +1,34 @@
+﻿#####################################################################################
+# 符文物品清單資料庫
+#####################################################################################
+#
+# 此檔案是符文物品清單 (Rune Item List) 資料庫,
+# 它是符文石碑系統的組成部分.
+#
+# 此資料庫定義了清單編號及其對應的道具名稱 (AegisName) 和數量,
+# 全部資訊都可以在客戶端 LUB 檔案中提取.
+#
+#####################################################################################
+# - Id                         [數值型] 物品清單編號
+#
+#                              對應客戶端 runeSystem_table.lub 中 RuneTable_itemList 陣列的 Key
+#
+#   Items                      [列表陣列] 物品清單中包含的道具名稱 (AegisName) 和數量
+#                              清單中的道具用於啟用符文碎片, 啟用符文集和符文集強化等場景都要用到
+#
+#                              對應客戶端 runeSystem_table.lub 中 RuneTable_itemList 陣列的 Value
+#                              其中的數值型道具編號會在 itemdbnametbl.lub 中查詢到對應的 AegisName 填入下表,
+#                              但還需要額外確保你的物品資料庫中存在對應的道具定義才可以
+######################################################################################
+
+Header:
+  Type: RUNE_ITEMLISTS_DB
+  Version: 1
+
+Footer:
+  Imports:
+  - Path: db/pre-re/rune_itemlists_db.yml
+    Mode: Prerenewal
+  - Path: db/re/rune_itemlists_db.yml
+    Mode: Renewal
+  - Path: db/import/rune_itemlists_db.yml

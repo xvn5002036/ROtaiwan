@@ -1,0 +1,695 @@
+﻿#####################################################################################
+# 符文物品清單資料庫
+#####################################################################################
+#
+# 此檔案是符文物品清單 (Rune Item List) 資料庫,
+# 它是符文石碑系統的組成部分.
+#
+# 此資料庫定義了清單編號及其對應的道具名稱 (AegisName) 和數量,
+# 全部資訊都可以在客戶端 LUB 檔案中提取.
+#
+#####################################################################################
+# - Id                         [數值型] 物品清單編號
+#
+#                              對應客戶端 runeSystem_table.lub 中 RuneTable_itemList 陣列的 Key
+#
+#   Items                      [列表陣列] 物品清單中包含的道具名稱 (AegisName) 和數量
+#                              清單中的道具用於啟用符文碎片, 啟用符文集和符文集強化等場景都要用到
+#
+#                              對應客戶端 runeSystem_table.lub 中 RuneTable_itemList 陣列的 Value
+#                              其中的數值型道具編號會在 itemdbnametbl.lub 中查詢到對應的 AegisName 填入下表,
+#                              但還需要額外確保你的物品資料庫中存在對應的道具定義才可以
+######################################################################################
+
+Header:
+  Type: RUNE_ITEMLISTS_DB
+  Version: 1
+
+Body:
+  - Id: 1
+    Items:
+      EP17_1_EVT02: 75
+      EP17_1_EVT39: 35
+      EP17_1_EVT01: 5
+      Imperfect_Rune: 150
+      Perfect_Rune: 1
+  - Id: 2
+    Items:
+      BarMealTicket: 1350
+      Imperfect_Rune: 100
+      Perfect_Rune: 1
+  - Id: 3
+    Items:
+      EP17_1_EVT02: 65
+      EP17_1_EVT39: 30
+      EP17_1_EVT01: 5
+      Imperfect_Rune: 125
+      Perfect_Rune: 2
+  - Id: 4
+    Items:
+      EP17_1_EVT02: 80
+      EP17_1_EVT39: 35
+      EP17_1_EVT01: 15
+      Imperfect_Rune: 150
+      Perfect_Rune: 2
+  - Id: 5
+    Items:
+      EP17_1_EVT02: 100
+      EP17_1_EVT39: 50
+      EP17_1_EVT01: 10
+      Imperfect_Rune: 250
+      Perfect_Rune: 3
+  - Id: 6
+    Items:
+      BarMealTicket: 850
+      Magical_Igni_Stone: 3
+      Imperfect_Rune: 150
+      Perfect_Rune: 3
+  - Id: 7
+    Items:
+      BarMealTicket: 850
+      Magical_Igni_Stone: 5
+      Imperfect_Rune: 175
+      Perfect_Rune: 2
+  - Id: 8
+    Items:
+      BarMealTicket: 850
+      Magical_Igni_Stone: 5
+      Imperfect_Rune: 175
+      Perfect_Rune: 2
+  - Id: 9
+    Items:
+      BarMealTicket: 1250
+      Magical_Igni_Stone: 5
+      Imperfect_Rune: 175
+      Perfect_Rune: 3
+  - Id: 10
+    Items:
+      BarMealTicket: 1500
+      Magical_Igni_Stone: 7
+      Imperfect_Rune: 200
+      Perfect_Rune: 3
+  - Id: 11
+    Items:
+      BarMealTicket: 1500
+      Magical_Igni_Stone: 7
+      Imperfect_Rune: 200
+      Perfect_Rune: 3
+  - Id: 12
+    Items:
+      BarMealTicket: 1350
+      Magical_Igni_Stone: 10
+      Imperfect_Rune: 300
+      Perfect_Rune: 5
+      EP17_1_EVT02: 150
+      EP17_1_EVT39: 100
+      EP17_1_EVT01: 30
+  - Id: 13
+    Items:
+      BarMealTicket: 1550
+      Magical_Igni_Stone: 10
+      Imperfect_Rune: 350
+      Perfect_Rune: 5
+      EP17_1_EVT02: 175
+      EP17_1_EVT39: 125
+      EP17_1_EVT01: 45
+  - Id: 14
+    Items:
+      R_Boost_Lance_OS: 1
+      R_Blasti_OS: 1
+      R_Beam_Claymore_OS: 1
+      R_Cannon_Rapier_OS: 1
+      EP17_1_EVT02: 75
+      EP17_1_EVT01: 40
+  - Id: 15
+    Items:
+      R_AC_B44_OS: 1
+      R_Virtual_Bow_OS: 1
+      R_HR_S55_OS: 1
+      R_MH_P89_OS: 1
+      EP17_1_EVT02: 75
+      EP17_1_EVT01: 40
+  - Id: 16
+    Items:
+      R_Saphir_Hall_OS: 1
+      R_ElectricFox_OS: 1
+      R_Rutilus_Stick_OS: 1
+      R_Circuit_Board_OS: 1
+      EP17_1_EVT02: 75
+      EP17_1_EVT01: 40
+  - Id: 17
+    Items:
+      R_Kuroiro_OS: 1
+      R_Meuchler_OS: 1
+      R_Burning_Knuckle_OS: 1
+      R_Ultio_Spes_OS: 1
+      EP17_1_EVT02: 75
+      EP17_1_EVT01: 40
+  - Id: 18
+    Items:
+      R_Auto_BC_R: 1
+      R_Auto_B_R: 1
+      R_Auto_Armor_A: 1
+      R_Auto_Engine_A: 1
+      R_Auto_BC_L: 1
+      BarMealTicket: 250
+  - Id: 19
+    Items:
+      R_Auto_BC_L: 1
+      R_Auto_B_L: 1
+      R_Auto_Armor_B: 1
+      R_Auto_Engine_B: 1
+      R_Auto_Leg_B: 1
+      BarMealTicket: 250
+  - Id: 20
+    Items:
+      Bellare_Card: 5
+      High_Bellare_Card: 5
+      Heart_Hunter_Seal: 30
+      Explosive_Powder: 150
+      EP17_1_EVT39: 25
+      EP17_1_EVT02: 50
+  - Id: 21
+    Items:
+      Sanare_Card: 5
+      High_Sanare_Card: 5
+      Heart_Hunter_Seal: 50
+      Explosive_Powder: 100
+      EP17_1_EVT39: 30
+      EP17_1_EVT02: 60
+  - Id: 22
+    Items:
+      Plaga_Card: 5
+      Mutant_Plaga_Card: 5
+      Solid_Shell: 250
+      Dragon's_Skin: 200
+      Fluorescent_Liquid: 300
+      EP17_1_EVT39: 30
+      EP17_1_EVT02: 60
+  - Id: 23
+    Items:
+      R48_85_Bestia_Card: 1
+      EP17_1_EVT02: 100
+      EP17_1_EVT39: 50
+      Piece_Of_Bone_Armor: 350
+  - Id: 24
+    Items:
+      Venenum_Card: 5
+      Mt_Venenum_Card: 5
+      Sticky_Mucus: 250
+      Sticky_Poison: 175
+      Fluorescent_Liquid: 125
+      EP17_1_EVT39: 25
+      EP17_1_EVT02: 50
+  - Id: 25
+    Items:
+      Dolor_Card: 5
+      Mt_Dolor_Card: 5
+      Caput_Card: 3
+      Tough_Scalelike_Stem: 225
+      Sticky_Poison: 175
+      Bloody_Rune: 150
+      EP17_1_EVT39: 25
+      EP17_1_EVT02: 50
+  - Id: 26
+    Items:
+      E_EA1L_Card: 5
+      E_EA2S_Card: 3
+      EL_A17T_Card: 1
+      Screw: 300
+      Distorted_Iron_Plate: 250
+      Burnt_Parts: 125
+      EP17_1_EVT39: 50
+      EP17_1_EVT02: 100
+  - Id: 27
+    Items:
+      Redpepper_Card: 1
+      Assistant_Card: 5
+      Assistant_H_Card: 3
+      R_Ep172_1h_Book2: 1
+      R_Ep172_1h_Book: 1
+      Sturdy_Iron_Piece: 350
+      BarMealTicket: 1250
+  - Id: 28
+    Items:
+      Plaga3_Card: 5
+      Sanare3_Card: 5
+      R_Ep172_1h_Shotgun: 1
+      R_Ep172_1h_Hammer: 1
+      BarMealTicket: 850
+  - Id: 29
+    Items:
+      Plasma_R_Card: 5
+      Plasma_R2_Card: 5
+      R_Ep172_1h_Inst: 1
+      R_Ep172_1h_Whip: 1
+      Yellow_Gemstone: 175
+      Red_Gemstone: 175
+      BarMealTicket: 850
+  - Id: 30
+    Items:
+      Dolor3_Card: 5
+      Plasma_Y_Card: 5
+      R_Ep172_1h_Foxtail: 1
+      R_Ep172_Bh_Staff: 1
+      Yellow_Gemstone: 175
+      BarMealTicket: 850
+  - Id: 31
+    Items:
+      Beta_Baths_A_Card: 5
+      Beta_Cleaner_Card: 5
+      Bath_Mermaid_Card: 3
+      R_Ep172_1h_Axe: 1
+      R_Ep172_Bh_Huuma: 1
+      R_Ep172_1h_Sword2: 1
+      Delicious_Fish: 250
+      BarMealTicket: 950
+  - Id: 32
+    Items:
+      Papila_Ruba_H_Card: 3
+      Papila_Cae_H_Card: 3
+      Papila_H_Card: 3
+      R_Ep172_Bh_Huuma: 1
+      R_Ep172_Bh_Spear: 1
+      R_Ep172_1h_Spear: 1
+      Withered_Flower: 550
+      BarMealTicket: 950
+  - Id: 33
+    Items:
+      Bookworm_Card: 5
+      Roaming_Splbook_Card: 5
+      R_Ep172_1h_Book: 1
+      R_Ep172_1h_Book2: 1
+      Long_Limb: 150
+      Old_Magic_Book: 75
+      BarMealTicket: 900
+  - Id: 34
+    Items:
+      B_Scissore_Ng_H_Card: 3
+      Beta_Scissore_Ng_Card: 5
+      R_Ep172_Bh_Katar: 1
+      R_Ep172_Bh_knuck: 1
+      BarMealTicket: 850
+  - Id: 35
+    Items:
+      Bellare3_Card: 3
+      Venenum3_Card: 5
+      EP17_2_Cramp_Card: 5
+      Waterfall_Card: 5
+      R_Ep172_1h_Rifle: 1
+      R_Ep172_1h_Wand: 1
+      R_Ep172_1h_Dagger: 1
+      BarMealTicket: 1050
+  - Id: 36
+    Items:
+      Alnoldi_Ex_Card: 3
+      Alnoldi_Ex_H_Card: 1
+      Dry_Rafflesia_Card: 3
+      Dry_Rafflesia_H_Card: 1
+      Elder_Branch: 200
+      R_Ep172_1h_Foxtail: 1
+      BarMealTicket: 950
+  - Id: 37
+    Items:
+      EP17_2_Phen_Card: 3
+      EP17_2_Sword_Fish_Card: 3
+      EP17_2_Piranha_Card: 3
+      EP17_2_Marc_Card: 3
+      R_Ep172_Bh_Bow2: 1
+      R_Ep172_1h_Grenade: 1
+      R_Ep172_Bh_Bow: 1
+      BarMealTicket: 1050
+  - Id: 38
+    Items:
+      Pitaya_R_Card: 3
+      Pitaya_Y_Card: 3
+      Pitaya_B_Card: 3
+      Pitaya_V_Card: 3
+      Pitaya_G_Card: 3
+      R_Ep172_1h_Dagger2: 1
+      R_Ep172_1h_Gatling: 1
+      BarMealTicket: 1050
+  - Id: 39
+    Items:
+      Silva_Papilia_Card: 1
+      Gran_Papilia_Card: 1
+      Verporte_H_Card: 3
+      Verporta_Card: 3
+      Solid_Twig: 125
+      Illusion_Flower: 100
+      BarMealTicket: 950
+  - Id: 40
+    Items:
+      Aries_Card: 3
+      Aries_H_Card: 3
+      R_Ep172_Bh_Bow3: 1
+      Fancy_Fairy_Wing: 100
+      Illusion_Flower: 95
+      BarMealTicket: 850
+  - Id: 41
+    Items:
+      Beta_Guards_Ng_Card: 3
+      O_Cleaner_Ng_Card: 3
+      Burnt_Parts: 450
+      Mystery_Piece: 350
+      BarMealTicket: 950
+  - Id: 42
+    Items:
+      Sweety_Card: 1
+      R_Ep172_1h_Sword: 1
+      R_Ep172_Bh_Sword: 1
+      BarMealTicket: 2000
+  - Id: 43
+    Items:
+      Pitaya_Boss_Card: 1
+      R_Ep172_1h_Rifle: 1
+      R_Ep172_1h_Shotgun: 1
+      R_Ep172_1h_Gatling: 1
+      R_Ep172_1h_Grenade: 1
+      BarMealTicket: 2000
+  - Id: 44
+    Items:
+      Miguel_Card: 1
+      EP17_1_EVT01: 50
+      EP17_1_EVT39: 150
+      EP17_1_EVT02: 150
+      Milk: 50
+      Sweet_Potato: 50
+  - Id: 45
+    Items:
+      Imperfect_Rune: 25
+      EP17_1_EVT01: 1
+      EP17_1_EVT02: 5
+      EP17_1_EVT39: 7
+  - Id: 46
+    Items:
+      Imperfect_Rune: 28
+      EP17_1_EVT01: 2
+      EP17_1_EVT02: 6
+      EP17_1_EVT39: 8
+  - Id: 47
+    Items:
+      Imperfect_Rune: 31
+      EP17_1_EVT01: 3
+      EP17_1_EVT02: 7
+      EP17_1_EVT39: 9
+  - Id: 48
+    Items:
+      Imperfect_Rune: 34
+      EP17_1_EVT01: 4
+      EP17_1_EVT02: 8
+      EP17_1_EVT39: 10
+  - Id: 49
+    Items:
+      Imperfect_Rune: 37
+      EP17_1_EVT01: 5
+      EP17_1_EVT02: 9
+      EP17_1_EVT39: 11
+  - Id: 50
+    Items:
+      Imperfect_Rune: 40
+      EP17_1_EVT01: 6
+      EP17_1_EVT02: 10
+      EP17_1_EVT39: 12
+  - Id: 51
+    Items:
+      Imperfect_Rune: 44
+      Perfect_Rune: 1
+      EP17_1_EVT01: 7
+      EP17_1_EVT02: 12
+      EP17_1_EVT39: 14
+  - Id: 52
+    Items:
+      Imperfect_Rune: 48
+      Perfect_Rune: 1
+      EP17_1_EVT01: 8
+      EP17_1_EVT02: 14
+      EP17_1_EVT39: 16
+  - Id: 53
+    Items:
+      Imperfect_Rune: 52
+      Perfect_Rune: 1
+      EP17_1_EVT01: 9
+      EP17_1_EVT02: 16
+      EP17_1_EVT39: 18
+  - Id: 54
+    Items:
+      Imperfect_Rune: 56
+      Perfect_Rune: 1
+      EP17_1_EVT01: 10
+      EP17_1_EVT02: 18
+      EP17_1_EVT39: 20
+  - Id: 55
+    Items:
+      Imperfect_Rune: 60
+      Perfect_Rune: 1
+      EP17_1_EVT01: 11
+      EP17_1_EVT02: 20
+      EP17_1_EVT39: 22
+  - Id: 56
+    Items:
+      Imperfect_Rune: 65
+      Perfect_Rune: 2
+      EP17_1_EVT01: 12
+      EP17_1_EVT02: 23
+      EP17_1_EVT39: 25
+  - Id: 57
+    Items:
+      Imperfect_Rune: 70
+      Perfect_Rune: 2
+      EP17_1_EVT01: 13
+      EP17_1_EVT02: 26
+      EP17_1_EVT39: 28
+  - Id: 58
+    Items:
+      Imperfect_Rune: 75
+      Perfect_Rune: 2
+      EP17_1_EVT01: 14
+      EP17_1_EVT02: 29
+      EP17_1_EVT39: 31
+  - Id: 59
+    Items:
+      Imperfect_Rune: 75
+      Perfect_Rune: 3
+      EP17_1_EVT01: 15
+      EP17_1_EVT02: 30
+      EP17_1_EVT39: 31
+  - Id: 60
+    Items:
+      Imperfect_Rune: 25
+      BarMealTicket: 10
+      Magical_Igni_Stone: 1
+  - Id: 61
+    Items:
+      Imperfect_Rune: 28
+      BarMealTicket: 11
+      Magical_Igni_Stone: 1
+  - Id: 62
+    Items:
+      Imperfect_Rune: 31
+      BarMealTicket: 12
+      Magical_Igni_Stone: 1
+  - Id: 63
+    Items:
+      Imperfect_Rune: 34
+      BarMealTicket: 13
+      Magical_Igni_Stone: 1
+  - Id: 64
+    Items:
+      Imperfect_Rune: 37
+      BarMealTicket: 14
+      Magical_Igni_Stone: 1
+  - Id: 65
+    Items:
+      Imperfect_Rune: 40
+      BarMealTicket: 15
+      Magical_Igni_Stone: 1
+  - Id: 66
+    Items:
+      Imperfect_Rune: 44
+      Perfect_Rune: 1
+      BarMealTicket: 17
+      Magical_Igni_Stone: 2
+  - Id: 67
+    Items:
+      Imperfect_Rune: 48
+      Perfect_Rune: 1
+      BarMealTicket: 19
+      Magical_Igni_Stone: 2
+  - Id: 68
+    Items:
+      Imperfect_Rune: 52
+      Perfect_Rune: 1
+      BarMealTicket: 21
+      Magical_Igni_Stone: 2
+  - Id: 69
+    Items:
+      Imperfect_Rune: 56
+      Perfect_Rune: 1
+      BarMealTicket: 23
+      Magical_Igni_Stone: 2
+  - Id: 70
+    Items:
+      Imperfect_Rune: 60
+      Perfect_Rune: 1
+      BarMealTicket: 25
+      Magical_Igni_Stone: 2
+  - Id: 71
+    Items:
+      Imperfect_Rune: 65
+      Perfect_Rune: 2
+      BarMealTicket: 28
+      Magical_Igni_Stone: 3
+  - Id: 72
+    Items:
+      Imperfect_Rune: 70
+      Perfect_Rune: 2
+      BarMealTicket: 31
+      Magical_Igni_Stone: 3
+  - Id: 73
+    Items:
+      Imperfect_Rune: 75
+      Perfect_Rune: 2
+      BarMealTicket: 34
+      Magical_Igni_Stone: 3
+  - Id: 74
+    Items:
+      Imperfect_Rune: 75
+      Perfect_Rune: 3
+      BarMealTicket: 35
+      Magical_Igni_Stone: 3
+  - Id: 75
+    Items:
+      Imperfect_Rune: 21
+  - Id: 76
+    Items:
+      Jellopy: 100
+      Sticky_Mucus: 35
+      Apple: 5
+      Unripe_Apple: 3
+      Poring_Card: 3
+  - Id: 77
+    Items:
+      Clover: 100
+      Feather: 35
+      Carrot: 5
+      Rainbow_Carrot: 3
+      Lunatic_Card: 3
+  - Id: 78
+    Items:
+      Fluff: 100
+      Feather: 35
+      Clover: 5
+      Green_Herb: 3
+      Fabre_Card: 3
+  - Id: 79
+    Items:
+      South_Pork_Ricebowl: 5
+      Poring_Kombucha: 5
+      Monster_Bread: 5
+      Monster_Bread_: 5
+  - Id: 80
+    Items:
+      Imperfect_Rune: 2
+      Clover: 5
+      Jellopy: 5
+      Feather: 5
+      Tree_Of_Archer_2: 1
+  - Id: 81
+    Items:
+      Imperfect_Rune: 2
+      Clover: 5
+      Jellopy: 5
+      Feather: 5
+      Tree_Of_Archer_2: 1
+  - Id: 82
+    Items:
+      Imperfect_Rune: 2
+      Clover: 5
+      Jellopy: 5
+      Feather: 5
+      Tree_Of_Archer_2: 1
+  - Id: 83
+    Items:
+      Imperfect_Rune: 3
+      Clover: 6
+      Jellopy: 6
+      Feather: 6
+      Tree_Of_Archer_2: 2
+  - Id: 84
+    Items:
+      Imperfect_Rune: 3
+      Clover: 6
+      Jellopy: 6
+      Feather: 6
+      Tree_Of_Archer_2: 2
+  - Id: 85
+    Items:
+      Imperfect_Rune: 3
+      Clover: 6
+      Jellopy: 6
+      Feather: 6
+      Tree_Of_Archer_2: 2
+  - Id: 86
+    Items:
+      Imperfect_Rune: 4
+      Clover: 7
+      Jellopy: 7
+      Feather: 7
+      Tree_Of_Archer_2: 3
+  - Id: 87
+    Items:
+      Imperfect_Rune: 4
+      Clover: 7
+      Jellopy: 7
+      Feather: 7
+      Tree_Of_Archer_2: 3
+  - Id: 88
+    Items:
+      Imperfect_Rune: 4
+      Clover: 7
+      Jellopy: 7
+      Feather: 7
+      Tree_Of_Archer_2: 3
+  - Id: 89
+    Items:
+      Imperfect_Rune: 5
+      Clover: 8
+      Jellopy: 8
+      Feather: 8
+      Tree_Of_Archer_2: 4
+  - Id: 90
+    Items:
+      Imperfect_Rune: 5
+      Clover: 8
+      Jellopy: 8
+      Feather: 8
+      Tree_Of_Archer_2: 4
+  - Id: 91
+    Items:
+      Imperfect_Rune: 5
+      Clover: 8
+      Jellopy: 8
+      Feather: 8
+      Tree_Of_Archer_2: 4
+  - Id: 92
+    Items:
+      Imperfect_Rune: 5
+      Clover: 9
+      Jellopy: 9
+      Feather: 9
+      Tree_Of_Archer_2: 5
+  - Id: 93
+    Items:
+      Imperfect_Rune: 5
+      Clover: 9
+      Jellopy: 9
+      Feather: 9
+      Tree_Of_Archer_2: 5
+  - Id: 94
+    Items:
+      Perfect_Rune: 1
+      Clover: 10
+      Jellopy: 10
+      Feather: 10
+      Tree_Of_Archer_2: 5

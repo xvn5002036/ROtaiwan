@@ -1,0 +1,73 @@
+﻿#####################################################################################
+# 符文集資料庫
+#####################################################################################
+#
+# 此檔案是符文集 (Rune Set) 資料庫,
+# 它是符文石碑系統的組成部分.
+#
+# 此資料庫包含了啟用符文集所需道具和強化成功率等必要資訊,
+# 其中大部分資訊都可以在客戶端 LUB 檔案中提取.
+#
+#####################################################################################
+# - TagId                      [數值型] 符文集所屬的分組編號
+#
+#                              對應客戶端 runeset_info.lub 中的分組編號,
+#                              例如: RUNETAGIDTBL.EPISODE17 在 runesystemid.lub 中定義的編號是 17
+#
+#   RuneSetId                  [數值型] 符文集的數值編號
+#
+#                              對應客戶端 runeset_info.lub 中第二層陣列的 Key
+#                              例如: RUNEIDTBL.Rp_Ep17_Melee 對應的編號在 runesystemid.lub 的
+#                              RUNESETIDTBL 陣列中查到的值是: 1263000
+#
+#   RuneSetName                [字串] 符文集的名稱 (將作為常量被匯出到指令碼引擎)
+#
+#                              對應客戶端 runeset_info.lub 中第二層陣列的 Value 中的 RuneSetRes 欄位
+#                              例如: RUNESETIDTBL.Rt_Ep17_Doubt 的 RuneSetRes 是 "Rt_Ep17_Doubt"
+#
+#   RuneSetSlots               [字串陣列] 用於組成該符文集的符文碎片
+#                              最多隻允許設定 6 個, 為空的需要填寫 "false"
+#
+#                              對應客戶端 runeset_info.lub 中第二層陣列的 Value 中的 RuneSet_SlotList 陣列
+#                              在 RuneSet_SlotList 中為 0 的專案在這裡記得需要填寫 "false"
+#
+#   ActivateItemListId         [數值型] 啟用符文集所需物品的清單編號 (請見: rune_itemlists_db.yml)
+#
+#                              對應客戶端 runeset_info.lub 中第二層陣列的 Value 中的 RuneSetActiveList 欄位
+#                              清單編號可以在服務端 db/rune_itemlists_db.yml 查到所需要的道具和數量
+#
+#   UpgradeItemLists           [數值型陣列] 用於強化符文集的 15 個物品清單編號 (請見: rune_itemlists_db.yml)
+#
+#                              對應客戶端 runeset_info.lub 中第二層陣列的 Value 中的 RuneSet_UpGradeList 陣列
+#                              清單編號可以在服務端 db/rune_itemlists_db.yml 查到所需要的道具和數量
+#
+#   UpgradeChance              [數值型陣列] 與 UpgradeItemLists 對應的 15 個強化成功率 (萬分率)
+#
+#                              對應客戶端 runeset_info.lub 中第二層陣列的 Value 中的 RuneSet_UpGrade_Percentage_table 欄位
+#                              得到欄位的值之後再獲取 runeset_info.lub 頂部 GradeTable 陣列中對應的機率值
+#
+#   UpgradeFailureBonus        [數值型陣列] 與 UpgradeItemLists 對應的 15 個強化失敗補償機率.
+#                              強化失敗後的下一次強化會在原先的基礎上增加額外的補償機率.
+#
+#                              對應客戶端 runeset_info.lub 中第二層陣列的 Value 中的 RuneSet_UpGrade_Percentage_table_Fail 欄位
+#                              得到欄位的值之後再獲取 runeset_info.lub 頂部 GradeTable_Fail 陣列中對應的機率值
+#
+#   RuneStatusScript           [字串, 可選] 當玩家裝備該符文集時執行的效果指令碼.
+#                              執行指令碼時以下變數將被自動賦值:
+#                              @rune_active_pieces 會被設為該符文集中啟用的符文碎片數量
+#                              @rune_active_level 會被設為該符文集當前的強化等級
+#
+#                              對應客戶端 runeset_desc.lub 中特定字符集的描述來編寫效果指令碼
+######################################################################################
+
+Header:
+  Type: RUNE_SETS_DB
+  Version: 1
+
+Footer:
+  Imports:
+  - Path: db/pre-re/rune_sets_db.yml
+    Mode: Prerenewal
+  - Path: db/re/rune_sets_db.yml
+    Mode: Renewal
+  - Path: db/import/rune_sets_db.yml
