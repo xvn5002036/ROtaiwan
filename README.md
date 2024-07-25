@@ -113,6 +113,20 @@ MyRagnarok 2024.exe  是2021-11-17_RagexeRE.exe轉換過來的
 	#define PACKETVER 20220406
 #endif
 ```
+## 關於公會圖及冒險者家仲介(需搭配我提供的登入器)
+
+請使用 https://rolab.org/thread-2154-1-1.html 所提供的程式即可 (你自己需要架設網站的能力)
+
+客戶端部分需要到20240324.grf解開到
+
+data\luafiles514\lua files\service_korea\ExternalSettings_kr_sak.lub
+
+找到AssistAddr = "127.0.0.1"
+
+裡面把127.0.0.1改成你的IP即可
+
+
+
 
 
 
